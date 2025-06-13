@@ -7,49 +7,47 @@ A framework for fine-tuning large language models to generate step-by-step solut
 ```
 .
 ├── README.md                ← this file
+├── requirements.txt         ← dependencies
 ├── data/
-│   ├── both_math_and_gsm8k/
-│   │   ├── processed_train_method_1.json
-│   │   ├── processed_train_method_2.json
-│   │   └── processed_train_sft.json
 │   ├── math/
-│   │   ├── processed_train_method_1.json
-│   │   ├── processed_train_method_2.json
-│   │   ├── processed_train_sft.json
-│   │   └── processed_test_method_2.json
+│   │   ├── processed_train_method_1.json              ← training file for method 1 in the paper
+│   │   ├── processed_train_method_2.json              ← training file for method 2 in the paper
+│   │   ├── processed_train_sft.json                   ← training file for baseline SFT in the paper
+│   │   └── processed_test_sft_and_methods.json        ← test file for baseline SFT and proposed methods in the paper
 │   ├── gsm8k/
 │   │   ├── processed_train_method_1.json
 │   │   ├── processed_train_method_2.json
 │   │   ├── processed_train_sft.json
-│   │   └── processed_test_methods.json
+│   │   ├── processed_test_sft.json                    ← test file for baseline SFT in the paper
+│   │   └── processed_test_methods.json                ← test file for proposed methods in the paper
 │   └── test_ood/
 │       ├── aime/
-│       │   ├── processed_test_zero_cot.json
-│       │   ├── processed_test_method_2_gsm8k.json
-│       │   ├── processed_test_method_2_math.json
-│       │   └── processed_test_sft.json
+│       │   ├── processed_test_zero_cot.json           ← test file for baseline zero-shot CoT in the paper
+│       │   ├── processed_test_method_2_gsm8k.json     ← test file for method 2 in the paper
+│       │   ├── processed_test_method_2_math.json      ← test file for method 2 in the paper
+│       │   └── processed_test_sft_and_methods.json    ← test file for baseline SFT and proposed methods in the paper
 │       └── olympiad/
 │           ├── processed_test_zero_cot.json
 │           ├── processed_test_method_2_gsm8k.json
 │           ├── processed_test_method_2_math.json
-│           └── processed_test_sft.json
+│           └── processed_test_sft_and_methods.json
 └── src/
     ├── sft_training/
-    │   ├── run_sft.sh         ← launch script for SFT
-    │   ├── run_sft.py         ← entry-point for training
-    │   ├── sft_trainer.py     ← custom trainer implementation
-    │   ├── data_collator.py   ← batch collation logic
-    │   ├── trainer.py         ← wrapper around HF Trainer
-    │   └── utils.py           ← data & helper functions
+    │   ├── run_sft.sh           ← launch script for SFT
+    │   ├── run_sft.py           ← entry-point for training
+    │   ├── sft_trainer.py       ← custom trainer implementation
+    │   ├── data_collator.py     ← batch collation logic
+    │   ├── trainer.py           ← wrapper around HF Trainer
+    │   └── utils.py             ← data & helper functions
     ├── best_of_n/
-    │   ├── llm.py             ← LLM interface & helpers
-    │   ├── solve_gsm8k.py     ← best-of-n for GSM8K
-    │   ├── solve_math.py      ← best-of-n for MATH
-    │   ├── solve_test.py      ← inference on test splits
-    │   └── self_consistency.py← self-consistency decoding
+    │   ├── llm.py               ← LLM interface & helpers
+    │   ├── solve_gsm8k.py       ← best-of-n for GSM8K
+    │   ├── solve_math.py        ← best-of-n for MATH
+    │   ├── solve_test.py        ← inference on test splits
+    │   └── self_consistency.py  ← self-consistency decoding
     └── sft_eval/
-        ├── vllm_hf_eval.py     ← evaluation via vLLM/HF
-        └── run_eval.sh         ← evaluation launcher
+        ├── vllm_hf_eval.py      ← evaluation via vLLM/HF
+        └── run_eval.sh          ← evaluation launcher
 ```
 
 ## ⚙️ Installation
