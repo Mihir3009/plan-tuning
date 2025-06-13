@@ -13,13 +13,15 @@ A framework for fine-tuning large language models to generate step-by-step solut
 │   │   ├── processed_train_method_1.json              ← training file for method 1 in the paper
 │   │   ├── processed_train_method_2.json              ← training file for method 2 in the paper
 │   │   ├── processed_train_sft.json                   ← training file for baseline SFT in the paper
-│   │   └── processed_test_sft_and_methods.json        ← test file for baseline SFT and proposed methods in the paper
+│   │   └── processed_test_sft.json                    ← test file for baseline SFT and proposed methods in the paper
+│   │   └── processed_test_method_2.json               ← test file for method 2 in the paper
 │   ├── gsm8k/
 │   │   ├── processed_train_method_1.json
 │   │   ├── processed_train_method_2.json
 │   │   ├── processed_train_sft.json
 │   │   ├── processed_test_sft.json                    ← test file for baseline SFT in the paper
 │   │   └── processed_test_methods.json                ← test file for proposed methods in the paper
+│   │   └── processed_test_method_2.json                ← test file for proposed methods in the paper
 │   └── test_ood/
 │       ├── aime/
 │       │   ├── processed_test_zero_cot.json           ← test file for baseline zero-shot CoT in the paper
