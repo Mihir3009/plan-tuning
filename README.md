@@ -21,18 +21,17 @@ A framework for fine-tuning large language models to generate step-by-step solut
 │   │   ├── processed_train_sft.json
 │   │   ├── processed_test_sft.json                    ← test file for baseline SFT in the paper
 │   │   └── processed_test_methods.json                ← test file for proposed methods in the paper
-│   │   └── processed_test_method_2.json                ← test file for proposed methods in the paper
 │   └── test_ood/
 │       ├── aime/
 │       │   ├── processed_test_zero_cot.json           ← test file for baseline zero-shot CoT in the paper
-│       │   ├── processed_test_method_2_gsm8k.json     ← test file for method 2 in the paper
-│       │   ├── processed_test_method_2_math.json      ← test file for method 2 in the paper
-│       │   └── processed_test_sft_and_methods.json    ← test file for baseline SFT and proposed methods in the paper
+│       │   ├── processed_test_method_2_gsm8k.json     ← test file for method 2 in the paper for GSM8k trained models
+│       │   ├── processed_test_method_2_math.json      ← test file for method 2 in the paper for MATH trained models
+│       │   └── processed_test_sft.json                ← test file for baseline SFT and proposed methods in the paper
 │       └── olympiad/
 │           ├── processed_test_zero_cot.json
 │           ├── processed_test_method_2_gsm8k.json
 │           ├── processed_test_method_2_math.json
-│           └── processed_test_sft_and_methods.json
+│           └── processed_test_sft.json
 └── src/
     ├── sft_training/
     │   ├── run_sft.sh           ← launch script for SFT
