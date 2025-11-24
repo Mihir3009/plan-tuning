@@ -2,8 +2,8 @@ import vertexai
 from vertexai.generative_models import GenerativeModel, GenerationConfig, HarmCategory, SafetySetting
 from retrying import retry
 
-PROJECT_ID = "research-01-268019"
-REGIONS = ["us-central1", "asia-east1"]
+PROJECT_ID = ""
+REGIONS = []
 vertexai.init(project=PROJECT_ID, location=REGIONS[0])
 
 # Define safety settings as a list of SafetySetting objects
